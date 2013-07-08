@@ -1,4 +1,6 @@
 <h2>Todos</h2>
 <% @todos.each do |todo| %>
-  <%= todo.task %><br/>
+  <a href="/todos/<%= todo.id %>">
+    <%= todo.task %><br/>
+  </a>
 <% end %>
