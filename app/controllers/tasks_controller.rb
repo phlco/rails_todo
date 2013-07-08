@@ -11,7 +11,7 @@ class TasksController < ApplicationController
     task.name = params[:name]
     task.details = params[:details]
     task.person = params[:person]
-    task.duedate = params[:duedate].to_date
+    task.duedate = params[:duedate].strftime("%Y-%d-%m")
     task.status = params[:status]
     task.save
     redirect_to "/tasks/#{task.id}"
