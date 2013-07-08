@@ -10,6 +10,7 @@ class TodosController < ApplicationController
   end
 
   def show
+    @task = Todo.find(params[:id])
   end
 
 end
