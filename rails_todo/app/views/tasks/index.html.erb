@@ -1,6 +1,6 @@
 <h1>Tasks</h1>
 <ul>
   <% @tasks.each do |task| %>
-    <li><%= task.name %></li>
+    <li><a href="<%= task.id %>">x<%= task.name %></a></li>
   <% end %>
 </ul>
