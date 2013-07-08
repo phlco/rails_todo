@@ -1,6 +1,12 @@
 <h1><%= @task.name %></h1>
 
-<a href="/tasks/<%= @task.id %>">edit task</a>
+<p>info: <%= @task.info %></p>
+
+<p>done: <%= @task.done %></p>
+
+
+<form action="/tasks/<%= @task.id %>/edit" method="get">
+<button>edit task</button>
 
 <form action="/tasks/<%= @task.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
