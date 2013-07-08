@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20130708205959) do
 
-  create_table "todos_tables", force: true do |t|
+  create_table "todos", force: true do |t|
     t.string  "task"
     t.string  "description"
     t.string  "due_date"
