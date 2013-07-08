@@ -5,5 +5,10 @@
   <li>Description: <%= @task.note %></li>
 </ul>
 
+
 <button>Edit this task</button>
-<button>Delete this task</button>
+
+<form action="/todos/<%= @task.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button>Delete this task</button>
+</form>

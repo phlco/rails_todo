@@ -21,4 +21,10 @@ class TodosController < ApplicationController
     redirect_to('/todos')
   end
 
+  def destroy
+    task_to_delete = Todo.find(params[:id])
+    task_to_delete.destroy
+    redirect_to('/todos')
+  end
+
 end
