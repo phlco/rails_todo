@@ -13,4 +13,12 @@ class TodosController < ApplicationController
     @task = Todo.find(params[:id])
   end
 
+  def create
+    new_task = Todo.new
+    new_task.name = params[:name]
+    new_task.note = params[:note]
+    new_task.save
+    redirect_to('/todos')
+  end
+
 end
