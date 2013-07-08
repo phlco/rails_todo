@@ -11,7 +11,7 @@ class TasksController < ApplicationController
     task.name = params[:name]
     task.details = params[:details]
     task.person = params[:person]
-    task.duedate = params[:duedate]
+    task.duedate = params[:duedate].to_date
     task.status = params[:status]
     task.save
     redirect_to "/tasks/#{task.id}"
@@ -27,7 +27,13 @@ class TasksController < ApplicationController
 
   def update
     task = Task.find(params[:id])
-
+    task.name = params[:name]
+    task.details = params[:details]
+    task.person = params[:person]
+    task.duedate = params[:duedate]
+    task.status = params[:status]
+    task.save
+    redirect_to "/tasks/#{task.id}"
   end
 
   def destroy

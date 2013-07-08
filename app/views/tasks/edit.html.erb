@@ -6,6 +6,11 @@
   <p>Details: <input type="text" name="details" value="<%= @task.details %>"></p>
   <p>Responsible Person: <input type="text" name="person" value="<%= @task.person %>"></p>
   <p>Due Date: <input type="date" name="duedate" value="<%= @task.duedate %>"></p>
-  <p>Status: <input id="status_completed" type="radio" name="status" value="true"><label for="status_completed">Completed</label><input id="status_progerss" type="radio" name="status" value="false"><label for "status_progress">In Progress</label></p>
+  <% if @task.status == false %>
+  <p>Status: <input type="radio" name="status" value="true"><label for="status_completed">Completed</label><input type="radio" name="status" value="false" checked><label for="status_progress">In Progress</label></p>
+  <% else %>
+    <p>Status: Completed</p>
+  <% end %>
+  <input type="hidden" name="_method" value="put">
   <button>Submit</button>
 </form>
