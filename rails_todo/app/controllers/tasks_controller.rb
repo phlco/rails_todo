@@ -7,10 +7,14 @@ class TasksController < ApplicationController
   end
 
   def create
-    name = params[:task]
+    name = params[:name]
+    info = params[:info]
+    done = params[:done]
 
     task = Task.new
     task.name = name
+    task.info = info
+    task.done = done
     task.save
 
     redirect_to '/tasks'
@@ -26,7 +30,9 @@ class TasksController < ApplicationController
 
   def update
     task = Task.find(params[:id])
-    task.name = params[:task]
+    task.name = params[:name]
+    task.info = params[:info]
+    task.done = params[:done]
     task.save
     redirect_to "/tasks/#{task.id}"
   end

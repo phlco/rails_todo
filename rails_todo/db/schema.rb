@@ -9,16 +9,16 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended that you check this file into your version control system.
+# It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130708211516) do
+ActiveRecord::Schema.define(:version => 20130708224439) do
 
-  create_table "tasks", force: true do |t|
-    t.string   "task"
+  create_table "tasks", :force => true do |t|
+    t.string   "name"
     t.string   "info"
     t.boolean  "done"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
