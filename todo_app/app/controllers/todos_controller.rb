@@ -4,4 +4,8 @@ class TodosController < ApplicationController
     @todos = Todo.all
   end
 
+  def show
+    @todo = Todo.find(params[:id])
+  end
+
 end
