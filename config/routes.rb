@@ -5,4 +5,6 @@ RailsTodo::Application.routes.draw do
  post '/tasks' => 'tasks#create'
  get '/tasks/:id' => 'tasks#show' #Detailed list
  get '/tasks/:id/edit' => 'tasks#edit'
+ put '/tasks/:id' => 'tasks#update'
+ delete '/tasks/:id' => 'tasks#destroy'
 end

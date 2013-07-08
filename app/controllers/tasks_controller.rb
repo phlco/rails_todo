@@ -25,6 +25,13 @@ def edit
   due_date = params[:due_date]
 end
 
+def update
+  task = Task.find(params[:id])
+  task.task_info = params[:task_info]
+  task.due_date = params[:due_date]
+  task.save
+  redirect_to "/tasks/#{task.id}"
+end
 
 def show
   @task = Task.find(params[:id])
