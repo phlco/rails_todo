@@ -1,0 +1,11 @@
+<h1>I'm an index kid</h1>
+
+<p>
+  <ol>
+    <li>
+    <% @todos.each do |todo| %>
+     <a href="/todos/<%= todo.id %>"> <%= todo.name %></a>
+    <% end %>
+  </li>
+</ol>
+</p>
