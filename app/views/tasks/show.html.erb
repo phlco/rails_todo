@@ -2,3 +2,8 @@
 
 <p>Task: <%= @task.task_info %></p>
 <p>To be completed by: <%= @task.due_date %></p>
+
+<form action="/tasks/<%= @task.id %>" method="POST">
+  <input type="hidden" name="_method" value="delete">
+  <button>Delete task</button>
+</form>
