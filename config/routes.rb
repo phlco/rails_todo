@@ -1,8 +1,8 @@
 RailsTodo::Application.routes.draw do
-  get "tasks/index"
-  get "tasks/show"
-  get "tasks/edit"
-  get "tasks/new"
+
+  root 'welcome#index'
+  resources :tasks
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -43,7 +43,7 @@ RailsTodo::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
