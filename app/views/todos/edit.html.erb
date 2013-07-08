@@ -1,1 +1,8 @@
-This is edit.
+<h1>Edit Your Task Here</h1>
+
+<form action="/todos/<%= @task.id %>" method="POST">
+  <input type="text" name="name" size="50px" value="<%= @task.name %>"><br/>
+  <input type="text" name="note" size="50px" value="<%= @task.note %>"><br/>
+  <input type="hidden" name="_method" value="PUT">
+  <button>Edit This Task</button>
+</form>

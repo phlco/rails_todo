@@ -2,8 +2,8 @@
 
 <p>Here'a list of your current to-do's:</p>
 
-<% if @todos.nil? %>
-  <ul><li>"You current do not have any tasks saved."</li></ul>
+<% if @todos.empty? %>
+  <ul><li>You current do not have any tasks saved.</li></ul>
 <% else %>
   <ul>
     <% @todos.each do |task| %>

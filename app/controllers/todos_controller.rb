@@ -7,6 +7,7 @@ class TodosController < ApplicationController
   end
 
   def edit
+    @task = Todo.find(params[:id])
   end
 
   def show
@@ -25,6 +26,14 @@ class TodosController < ApplicationController
     task_to_delete = Todo.find(params[:id])
     task_to_delete.destroy
     redirect_to('/todos')
+  end
+
+  def update
+    task_to_edit = Todo.find(params[:id])
+    task_to_edit.name = params[:name]
+    task_to_edit.note = params[:note]
+    task_to_edit.save
+    redirect_to("/todos/#{params[:id]}")
   end
 
 end

@@ -6,7 +6,7 @@
 </ul>
 
 
-<button>Edit this task</button>
+<a href="/todos/<%= @task.id %>/edit"><button>Edit this task</button></a>
 
 <form action="/todos/<%= @task.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
