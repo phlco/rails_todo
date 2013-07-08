@@ -5,4 +5,5 @@ Todos::Application.routes.draw do
   post '/' => 'welcome#create'
   get '/:id/edit' => 'welcome#edit'
   put '/:id' => 'welcome#update'
+  delete '/:id' => 'welcome#destroy'
 end

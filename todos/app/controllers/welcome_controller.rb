@@ -31,4 +31,10 @@ class WelcomeController < ApplicationController
   redirect_to('/')
   end
 
+  def destroy
+    todo= Todo.find(params[:id])
+    todo.destroy
+    redirect_to('/')
+  end
+
 end
