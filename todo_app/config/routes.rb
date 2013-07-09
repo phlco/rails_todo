@@ -4,4 +4,6 @@ TodoApp::Application.routes.draw do
   post '/todos' => 'todos#create'
   get '/todos/new' => 'todos#new'
   get '/todos/:id' => 'todos#show'
+  get '/todos/:id/edit' => 'todos#edit'
+  put '/todos/:id' => 'todos#update'
 end

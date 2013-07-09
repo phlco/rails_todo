@@ -23,4 +23,19 @@ class TodosController < ApplicationController
     @todo = Todo.find(params[:id])
   end
 
+  def edit
+    params[:id]
+    @todo = Todo.find(params[:id])
+  end
+
+  def update
+    todo = Todo.find(params[:id])
+    todo.task = params[:task]
+    todo.description = params[:description]
+    todo.due_date = params[:due_date]
+    todo.completed = params[:completed]
+    todo.save
+    redirect_to("/todos/#{todo.id}")
+  end
+
 end
