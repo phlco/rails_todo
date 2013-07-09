@@ -1,0 +1,7 @@
+<h1>New Todo</h1>
+<form action="/todos" method="post">
+  <%= token_tag form_authenticity_token %>
+  <input type="text" name="name" placeholder="name">
+  <input type="text" name="description" placeholder="description">
+  <button>New Todo</button>
+</form>
