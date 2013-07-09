@@ -46,9 +46,9 @@ class TasksController < ApplicationController
 		task.save
 		redirect_to('/tasks')		
 	end
-	
+
 	def destroy
-		Task.find(params[:id]).delete
+		Task.find(params[:id])
 		redirect_to('/tasks')
 	end
 end
