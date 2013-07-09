@@ -3,3 +3,5 @@
   <li>Description: <%= @todo.description %></li>
   <li>Do this by: <%= @todo.due_date %></li>
 </ul>
+
+<a href="/todos/<%= @todo.id %>/edit">Edit To-Do</a>

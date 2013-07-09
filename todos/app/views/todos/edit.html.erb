@@ -1,0 +1,10 @@
+<h1>Edit To-Do</h1>
+<form action="/todos/<%= @todo.id %>" method="post">
+  <label for="name">To-Do name</label><br/>
+  <input type="text" name="name" placeholder="<%= @todo.name %>"><br/>
+  <label for="description">To-Do description</label><br/>
+  <input type="text" name="description" placeholder="<%= @todo.description %>"><br/>
+  <label for="due_date">To-Do due date (mm/dd/yyyy)</label><br/>
+  <input type="text" name="due_date" placeholder="<%= @todo.due_date %>"><br/>
+  <button>Submit Changes</button>
+</form>
