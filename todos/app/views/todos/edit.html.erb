@@ -5,7 +5,7 @@
   <input type="hidden" name="_method" value="put">
 
 <label>Add Person To Task</label>
-  <select name="contact">
+  <select name="contact_id">
     <% @contacts.each do |contact| %>
   <option value="<%= contact.id %>"><%= contact.name %></option>
   <% end %>
@@ -13,3 +13,4 @@
 
   <button>Edit Todo</button>
 </form>
+<p><a href="/todos/<%=@todo.id %>">Back</a></p>

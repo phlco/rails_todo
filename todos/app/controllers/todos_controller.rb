@@ -27,12 +27,17 @@ def index
   end
 
   def update
-  todo = Todo.find(params[:id])
-  todo.title = params[:title]
-  todo.description = params[:description]
-  todo.contacts << Contact.find(params[:contact])
-  todo.save
-  redirect_to('/todos')
+    todo = Todo.find(params[:id])
+    todo.title = params[:title]
+    todo.description = params[:description]
+    new_contact = Contact.find(params[:contact_id])
+    todo.contacts.each do |contact|
+       unless contact.id == new_contact.id
+           todo.contacts << new_contact
+           todo.save
+       end
+     end
+    redirect_to('/todos')
   end
 
   def destroy
