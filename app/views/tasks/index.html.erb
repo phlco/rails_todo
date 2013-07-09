@@ -1,7 +1,8 @@
-<h1>List of tasks goes here</h1>
+<h1>Task list</h1>
 
-<ul>
+
 <% @tasks.each do |task| %>
+<ul>
 <li>
  <a href="/tasks/<%= task.id %>">
   <%= task.task_info %>
