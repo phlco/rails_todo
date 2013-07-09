@@ -1,0 +1,10 @@
+<h1>That Which Needs Doing:</br> <%= @todo.task %></h1></br>
+<h2>Place to Do That Which Needs Doing:</br><%= @todo.location %></h2></br>
+<h3>What Must Be Done in Order to Complete That Which Needs Doing:</br> <%= @todo.description %></h3></br>
+
+<a href="/todos/<%= @todo.id %>/edit">Edit This Task</a>
+
+<form action="/todos/<%= @todo.id %>" method="post" >
+  <input type="hidden" name="_method" value="delete">
+  <button>Delete This Task</button>
+</form>
