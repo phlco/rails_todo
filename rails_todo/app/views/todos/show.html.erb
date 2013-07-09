@@ -1,0 +1,9 @@
+<h1>Better get this completed: <%= @todo.name %> </h1>
+
+  <button><a href="/todos/<%= @todo.id %>/edit">Edit this task</a></button>
+
+  <form action="/todos/<%= @todo.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button>Delete Task</button>
+
+  </form>

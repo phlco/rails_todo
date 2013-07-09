@@ -1,5 +1,5 @@
-<h1>Go Ahead & Add A New Task or Assignment</h1>
-<form action="/todos/<%= todo.id %>" method="get">
+<h1>Go Ahead & Edit A Task or Assignment</h1>
+<form action="/todos/<%= todo.id %>" method="post">
 <input type='text' name="name" value="<%= @todo.name%>"placeholder="name">
 <input type='text' name="description" <%= @todo.description%>placeholder="description">
 <input type="hidden" name="_method" value="put">
