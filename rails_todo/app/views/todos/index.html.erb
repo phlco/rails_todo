@@ -3,7 +3,7 @@
 
 <% @todos.each do |todo| %>
   <ul>
-    <li><b> <%= todo.task %> </b></li>
+    <li><b><a href="/todos/<%=todo.id%>"><%= todo.task %> </a></b></li>
       <ul>
         <li> <%= todo.task_description %> </li>
       </ul>
