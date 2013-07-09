@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todos</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<a href="/">Home</a>
+<a href="/todos">See To-Dos</a>
+<a href="/todos/new">Create a New To-Do</a>
+<%= yield %>
+
+</body>
+</html>
