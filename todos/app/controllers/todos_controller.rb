@@ -5,4 +5,16 @@ class TodosController < ApplicationController
 
   def new
   end
+
+  def create
+    name = params[:name]
+    description = params[:description]
+    due_date = params[:due_date]
+    todo = Todo.new
+    todo.name = name
+    todo.description = description
+    todo.due_date = due_date
+    todo.save
+    redirect_to '/todos'
+  end
 end
