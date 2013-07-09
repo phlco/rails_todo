@@ -27,5 +27,22 @@ class TasksController < ApplicationController
 		@task=Task.find(params[:id])
 	end
 
+	def edit
+		@task=Task.find(params[:id])
+	end
 
+	def update
+		task=Task.find(params[:id])
+		task.todo = params[:todo]
+		task.description = params[:description]
+		task.due = params[:due]
+		if urgent == 'on'
+			urgent = true
+		else
+			urgent = false
+		end
+		task.urgent = urgent
+		task.save
+		redirct_to('/tasks')		
+	end
 end
