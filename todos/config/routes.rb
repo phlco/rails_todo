@@ -7,3 +7,4 @@ Todos::Application.routes.draw do
   put '/:id' => 'welcome#update'
   delete '/:id' => 'welcome#destroy'
 end
+
