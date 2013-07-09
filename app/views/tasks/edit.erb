@@ -1,10 +1,10 @@
-<form action = "/tasks" method = 'post'>
+<form action = "/tasks/<%=@task.id%>" method = 'post'>
 	<input type="hidden" name="_method" value="put">
 	<input type = "text" name = "todo" value = "<%=@task.todo%>">
 	<input type = "text" name = "description" value = "<%=@task.description%>">
 	<input type= "date" name = "due" value = "<%=@task.due%>">
 	<% urgent = false%>
-	<% if @task.urgent then urgent = true%>
+	<% if @task.urgent then urgent=true end%>
 	<label for="urgent">Urgent</label>
 	<input type="checkbox" name = "urgent"  value = '<%=urgent%>'>
  	<button>Save Task</button>
