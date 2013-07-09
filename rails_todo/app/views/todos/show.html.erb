@@ -2,6 +2,10 @@
 
   <button><a href="/todos/<%= @todo.id %>/edit">Edit this task</a></button>
 
+  <ul>
+    <li><%= @todo.description %> </li>
+
+  </ul>
   <form action="/todos/<%= @todo.id %>" method="post">
     <input type="hidden" name="_method" value="delete">
     <button>Delete Task</button>

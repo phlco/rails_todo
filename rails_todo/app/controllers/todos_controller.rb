@@ -5,22 +5,20 @@ class TodosController < ApplicationController
   end
 
   def new
-
   end
 
   def create
-    name = params[:name]
-    description = params[:description]
     todo = Todo.new
-    todo.name = name
-    todo.description = description
+    todo.name = params[:name]
+    todo.description = params[:description]
+    todo.belongs_to = params[:contact]
     todo.save
     redirect_to '/todos/'
   end
 
   def show
-    name = params[:name]
-    description = params[:description]
+    # name = params[:name]
+    # description = params[:description]
     @todo = Todo.find(params[:id])
   end
 

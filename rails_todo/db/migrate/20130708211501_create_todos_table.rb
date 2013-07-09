@@ -3,6 +3,7 @@ class CreateTodosTable < ActiveRecord::Migration
     create_table :todos do |t|
       t.string :name
       t.string :description
+      t.belongs_to :contact
       t.timestamps
     end
   end

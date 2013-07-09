@@ -1,0 +1,10 @@
+<h1>People with stuff to do</h1>
+<p>
+  <ul>
+    <li>
+      <% @contacts.each do |contact|%>
+       <a href="/contacts/<%= contact.id %>"> <%= contact.title %></a>
+      <% end %>
+    </li>
+  </ul>
+</p>
