@@ -5,3 +5,7 @@
 </ul>
 
 <a href="/todos/<%= @todo.id %>/edit">Edit To-Do</a>
+<form action="/todos/<%= @todo.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button>Delete To-Do</button>
+</form>
