@@ -1,0 +1,16 @@
+<h1>Task: <%= @todo.name %></h1>
+<ul>
+  <li>Description: <%= @todo.description %></li>
+  <li>Do by: <%= @todo.do_by %></li>
+  <li>Done? <% if @todo.done == true %>Yes
+            <% else %>No
+            <% end %></li>
+</ul>
+
+<a href="/todos/<%= @todo.id %>/edit">Edit task</a>
+<br><br>
+<form action="/todos/<%= @todo.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button>Delete task</button>
+</form>
+<br><br>
