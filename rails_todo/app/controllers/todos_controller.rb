@@ -34,7 +34,6 @@ class TodosController < ApplicationController
     todo.task_description = params[:task_description]
     todo.save
     redirect_to "/todos/#{todo.id}"
-
   end
 
 end
