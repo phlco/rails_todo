@@ -6,6 +6,7 @@ class CreateTodosTable < ActiveRecord::Migration
       t.string :do_by
       t.boolean :done
       t.timestamps
+    end
   end
 
   def down
