@@ -4,7 +4,7 @@
 
 <a href="/todos/<%=@todo.id%>/edit">Edit the Task</a>
 
-<form action="/todos/<%=@todo.id%>" method="delete">
-  <input type="hidden" values="destroy">
+<form action="/todos/<%=@todo.id%>" method="post">
+  <input type="hidden" name="_method" value="delete">
   <button>Delete Task</button>
 </form>
