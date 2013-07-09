@@ -6,6 +6,7 @@ RailsTodo::Application.routes.draw do
   post '/todos' =>'todos#create'
   get '/todos/:id' => 'todos#show'
   get '/todos/:id/edit' => 'todos#edit'
+  put '/todos/:id' => 'todos#update'
 
 
   # The priority is based upon order of creation:
