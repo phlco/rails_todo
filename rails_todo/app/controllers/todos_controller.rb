@@ -37,8 +37,9 @@ class TodosController < ApplicationController
   end
 
   def delete
-
-
+    todo = Todo.find(params[:id])
+    todo.destroy
+    redirect_to '/todos'
   end
 
 
