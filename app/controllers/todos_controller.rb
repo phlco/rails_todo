@@ -1,4 +1,4 @@
-TodosController < ApplicationController
+class TodosController < ApplicationController
   def index
     @todos = Todo.all
   end
@@ -7,12 +7,11 @@ TodosController < ApplicationController
   end
 
   def create
-    name = params[:name]
     todo = Todo.new
-    todo.name = name
-    todo.description = description
-    todo.do_by = do_by
-    todo.done = done
+    todo.name = params[:name]
+    todo.description = params[:description]
+    todo.do_by = params[:do_by]
+    todo.done = params[:done]
     todo.save
     redirect_to "/todos"
   end
