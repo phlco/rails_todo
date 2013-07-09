@@ -1,0 +1,6 @@
+<h1> Tasks </h1>
+<% @tasks.each do |task|%>
+	<p><a href = "tasks/<%=task.id%>"</a></p>
+<%end%>
+
+<a href = "tasks/new">New Task</a>
