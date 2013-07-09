@@ -5,6 +5,7 @@ def index
   end
 
   def new
+    @contacts = Contact.all
   end
 
   def show
@@ -15,19 +16,22 @@ def index
     todo = Todo.new
     todo.title = params[:title]
     todo.description = params[:description]
+    todo.contacts << Contact.find(params[:contact])
     todo.save
     redirect_to '/todos'
   end
 
   def edit
     @todo = Todo.find(params[:id])
+    @contacts = Contact.all
   end
 
   def update
-  @todo = Todo.find(params[:id])
-  @todo.title = params[:title]
-  @todo.description = params[:description]
-  @todo.save
+  todo = Todo.find(params[:id])
+  todo.title = params[:title]
+  todo.description = params[:description]
+  todo.contacts << Contact.find(params[:contact])
+  todo.save
   redirect_to('/todos')
   end
 
