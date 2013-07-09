@@ -1,0 +1,10 @@
+<h1>Edit Task</h1>
+<form action="/todos/<%= @todo.id %>" method="post">
+  <input type="text" name="name" value="<%= @todo.name %>"><br>
+  <input type="text" name="description" value="<%= @todo.description %>"><br>
+  <input type="text" name="do_by" value="<%= @todo.do_by %>"><br>
+  <input type="radio" name="done" value="false" checked>Not Done
+  <input type="radio" name="done" value="true">Done<br>
+  <input type="hidden" name="_method" value="put">
+  <button>Update Dog</button>
+</form>
