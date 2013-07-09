@@ -1,7 +1,7 @@
 <h1>Add A New Task</h1>
-<form action="/todos/<%= todo.id %>" method="post">
-<input type='text' name="name" value="<%= @todo.name%>"placeholder="name">
-<input type='text' name="description" <%= @todo.description%>placeholder="description">
+<form action="/todos" method="post">
+<input type='text' name="name" placeholder="name">
+<input type='text' name="description" placeholder="description">
 <input type="hidden" name="_method" value="put">
 <button>Submit</button>
 </form>
