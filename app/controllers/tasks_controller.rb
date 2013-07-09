@@ -32,6 +32,7 @@ class TasksController < ApplicationController
 	end
 
 	def update
+		urgent = params[:urgent]
 		task=Task.find(params[:id])
 		task.todo = params[:todo]
 		task.description = params[:description]
@@ -43,6 +44,6 @@ class TasksController < ApplicationController
 		end
 		task.urgent = urgent
 		task.save
-		redirct_to('/tasks')		
+		redirect_to('/tasks')		
 	end
 end

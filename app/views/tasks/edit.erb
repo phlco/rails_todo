@@ -3,9 +3,7 @@
 	<input type = "text" name = "todo" value = "<%=@task.todo%>">
 	<input type = "text" name = "description" value = "<%=@task.description%>">
 	<input type= "date" name = "due" value = "<%=@task.due%>">
-	<% urgent = false%>
-	<% if @task.urgent then urgent=true end%>
 	<label for="urgent">Urgent</label>
-	<input type="checkbox" name = "urgent"  value = '<%=urgent%>'>
+	<input type="checkbox" name = "urgent" <%if @task.urgent%>checked<%end%>>
  	<button>Save Task</button>
 </form>
