@@ -1,0 +1,9 @@
+<%= @task.name %>
+<%= @task.description %>
+<p>
+  <a href="/tasks/<%= @task.id %>/edit">Edit Task</a>
+</p>
+<form action="/tasks/<%= @task.id %>" method="post">
+  <input type="hidden" name="_method" value="delete" />
+  <button>Delete Task</button>
+</form>
