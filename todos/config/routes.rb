@@ -1,10 +1,17 @@
 Todos::Application.routes.draw do
-  get '/' => 'welcome#index'
-  get '/new' => 'welcome#new'
-  get '/:id' => 'welcome#show'
-  post '/' => 'welcome#create'
-  get '/:id/edit' => 'welcome#edit'
-  put '/:id' => 'welcome#update'
-  delete '/:id' => 'welcome#destroy'
+
+
+  root :to => 'welcome#index'
+
+  ###Tasks###
+  get '/todos' => 'todos#index'
+  get '/todos/new' => 'todos#new'
+  get '/todos/:id' => 'todos#show'
+  post '/todos' => 'todos#create'
+  get '/todos/:id/edit' => 'todos#edit'
+  put '/todos/:id' => 'todos#update'
+  delete '/todos/:id' => 'todos#destroy'
+
+
 end
 
