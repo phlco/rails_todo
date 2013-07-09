@@ -4,8 +4,18 @@ class TodosController < ApplicationController
     @todos = Todo.all
   end
 
+  def new
+
+  end
+
   def create
-    todo = Todo.find(params[:id])
+    name = params[:name]
+    description = params[:description]
+    todo = Todo.new
+    todo.name = name
+    todo.description = description
+    todo.save
+    redirect_to '/todos/'
   end
 
   def show
@@ -17,10 +27,9 @@ class TodosController < ApplicationController
   def update
     todo = Todo.find(params[:id])
     todo.name = params[:name]
-    todo.description = params[:age]
+    todo.description = params[:description]
     todo.save
     redirect_to "/todos/#{todo.id}"
-
   end
 
   def edit
