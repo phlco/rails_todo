@@ -36,4 +36,11 @@ class TodosController < ApplicationController
     redirect_to "/todos/#{todo.id}"
   end
 
+  def delete
+
+
+  end
+
+
+
 end
