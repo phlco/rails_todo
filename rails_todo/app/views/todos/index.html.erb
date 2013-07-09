@@ -1,1 +1,11 @@
 <h1>Hello! I win!</h1>
+
+
+<% @todos.each do |todo| %>
+  <ul>
+    <li><b> <%= todo.task %> </b></li>
+      <ul>
+        <li> <%= todo.task_description %> </li>
+      </ul>
+  </ul>
+<%end %>
