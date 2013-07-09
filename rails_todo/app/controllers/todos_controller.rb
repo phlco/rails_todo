@@ -9,7 +9,11 @@ class TodosController < ApplicationController
   end
 
   def create
-
+    todo = Todo.new
+    todo.task = params[:task]
+    todo.task_description = params[:task_description]
+    todo.save
+    redirect_to '/todos'
   end
 
 end
