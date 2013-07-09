@@ -1,6 +1,10 @@
 <h1>Check out these to-dos!</h1>
-<% @todos.each do |todo| %>
-  <a href="/todos/<%= todo.id %>">
-    <%= todo.name %>
-  </a>
-<% end %>
+<ul>
+    <% @todos.each do |todo| %>
+      <li>
+        <a href="/todos/<%= todo.id %>">
+          <%= todo.name %>
+        </a>
+      </li>
+    <% end %>
+</ul>
