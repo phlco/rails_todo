@@ -1,0 +1,9 @@
+<h1>Task Details </h1>
+<h2>Task: <%=@task.todo%></h2>
+<p>Task Description: <%=@task.description%></p>
+<p>Due: <%=@task.due%></p>
+<% if @task.urgent %>
+	<p>Urgent</p>
+<%else%>
+	<p>Not Urgent</p>
+<%end%>
