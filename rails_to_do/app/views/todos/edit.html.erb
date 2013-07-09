@@ -1,0 +1,10 @@
+<h3>Edit Task</h3>
+
+<form action="/todos/<%= @task.id %>" method="POST">
+<%= @task.name %> <input type="text" placeholder="update task name" name="name"><br>
+<%= @task.description %> <input type="text" placeholder="update task description" name="description"><br>
+<%= @task.due_date %> <input type="date" placeholder="update task due date" name="due_date"><br>
+<%= @task.urgent %> <input type="text" placeholder="still urgent? true or false" name="urgent"><br>
+<input type="hidden" name="_method" value="put">
+<button>Update Task</button>
+</form>

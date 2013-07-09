@@ -1,0 +1,11 @@
+<h1>Details for <%= @task.name %></h1>
+
+<ul>
+  <li>
+    <h3><%= @task.description %> <%= @task.due_date %> <%= @task.urgent%></h3>
+  </li>
+</ul>
+
+<a href="/todos/<%= @task.id %>/edit"><button>Edit this task</button></a>
+
+<button>Delete this task</button>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RailsToDo</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<h1>Let's get some stuff done!</h1>
+<a href="/">Home</a>
+<a href="/todos">See all tasks</a>
+<a href="/todos/new">Create New Task</a>
+<%= yield %>
+
+</body>
+</html>

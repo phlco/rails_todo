@@ -1,0 +1,16 @@
+index todo - list all tasks
+
+<h4>Tasks</h4>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <a href="/todos/<%= task.id %>">
+        <%= task.name %> <%= task.urgent %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+<!-- link_to in the Rails view helpers -->
+
