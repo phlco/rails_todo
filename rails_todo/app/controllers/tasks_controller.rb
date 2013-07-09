@@ -11,11 +11,11 @@ class TasksController < ApplicationController
     info = params[:info]
     done = params[:done]
 
-    task = Task.new
-    task.name = name
-    task.info = info
-    task.done = done
-    task.save
+    @task = Task.new
+    @task.name = name
+    @task.info = info
+    @task.done = done
+    @task.save
 
     redirect_to '/tasks'
   end
@@ -29,18 +29,18 @@ class TasksController < ApplicationController
   end
 
   def update
-    task = Task.find(params[:id])
-    task.name = params[:name]
-    task.info = params[:info]
-    task.done = params[:done]
-    task.save
+    @task = Task.find(params[:id])
+    @task.name = params[:name]
+    @task.info = params[:info]
+    @task.done = params[:done]
+    @task.save
     redirect_to "/tasks/#{task.id}"
   end
 
   def destroy
-    task = Task.find(params[:id])
-    task.destroy
-    task.save
+    @task = Task.find(params[:id])
+    @task.destroy
+    @task.save
     redirect_to "/tasks"
   end
 

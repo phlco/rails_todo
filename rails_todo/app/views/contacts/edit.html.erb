@@ -1,0 +1,25 @@
+<h1>edit <%= @contact.name %></h1>
+
+<form action="/contacts/<%= @contact.id %>" method="post">
+  name: <input type="text" name="name" value="<%= @contact.name %>">
+  <input type="hidden" name="_method" value="put">
+
+<br>
+
+add task:
+  <select name="name">
+    <% @tasks.each do |task| %>
+      <option value="<%= task.name %>">
+        <%= task.name %>
+      </option>
+    <% end %>
+  </select><br>
+
+  <button>submit changes</button>
+</form>
+
+
+<form action="/contacts/<%= @contact.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button>delete contact</button>
+</form>
