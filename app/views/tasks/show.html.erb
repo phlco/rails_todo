@@ -1,0 +1,13 @@
+<h2>Task info</h2>
+
+<p>Task: <%= @task.task_info %></p>
+<% if @task.due_date %>
+<p>To be completed by: <%= @task.due_date %></p>
+<% end %>
+
+<a href="/tasks/<%= @task.id %>/edit">Edit Task</a>
+
+<form action="/tasks/<%= @task.id %>" method="POST">
+  <input type="hidden" name="_method" value="delete">
+  <button>Delete task</button>
+</form>
