@@ -6,10 +6,11 @@
   <input type="text" name="done" placeholder="done"><br>
 
   <label>add person to task</label>
-  <select name="contact">
+    <select name="contact">
     <% @contacts.each do |contact| %>
-  <option value="<%= contact.id %>"><%= contact.name %></option></select>
+  <option value="<%= contact.id %>"><%= contact.name %></option>
   <% end %>
+  </select>
 <br>
   <button>make new task</button>
 </form>

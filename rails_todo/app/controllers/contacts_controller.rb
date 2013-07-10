@@ -22,7 +22,7 @@ class ContactsController < ApplicationController
 
   def edit
     @contact = Contact.find(params[:id])
-    @tasks = Task.all
+    # @tasks = Task.all
     # @task = Task.find(params[:id])
   end
 

@@ -10,8 +10,9 @@
     <% end %>
 </p>
 
-<form action="/tasks/<%= @task.id %>/edit" method="get">
 <button>edit task</button>
+<form action="/tasks/<%= @task.id %>/edit" method="get">
+</form>
 
 <form action="/tasks/<%= @task.id %>" method="post">
   <input type="hidden" name="_method" value="delete">

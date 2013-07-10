@@ -1,24 +1,23 @@
 <h1>edit <%= @task.name %></h1>
 
 <form action="/tasks/<%= @task.id %>" method="post">
-  name: <input type="text" name="name" value="<%= @task.name %>">
-<br>
-
+  task: <input type="text" name="name" value="<%= @task.name %>">
+    <input type="hidden" name="_method" value="put">
+  <br>
   info: <input type="text" name="info" value="<%= @task.info %>">
-<br>
-
+    <input type="hidden" name="_method" value="put">
+  <br>
   done: <input type="text" name="done" value="<%= @task.done %>">
-
-<br>
-
-<label>add person to task</label>
-  <select name="contact_id">
+  <input type="hidden" name="_method" value="put">
+  <br>
+  <label>add person to task</label>
+  <select name="contact">
     <% @contacts.each do |contact| %>
   <option value="<%= contact.id %>"><%= contact.name %></option>
   <% end %>
-</select>
+  </select>
 
-<br>
+  <br>
 
   <button>submit changes</button>
   <input type="hidden" name="_method" value="put">
