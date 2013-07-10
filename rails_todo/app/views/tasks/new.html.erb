@@ -4,5 +4,12 @@
   <input type="text" name="name" placeholder="task"><br>
   <input type="text" name="info" placeholder="info"><br>
   <input type="text" name="done" placeholder="done"><br>
+
+  <label>add person to task</label>
+  <select name="contact">
+    <% @contacts.each do |contact| %>
+  <option value="<%= contact.id %>"><%= contact.name %></option></select>
+  <% end %>
+<br>
   <button>make new task</button>
 </form>

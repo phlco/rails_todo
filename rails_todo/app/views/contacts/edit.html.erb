@@ -3,19 +3,18 @@
 <form action="/contacts/<%= @contact.id %>" method="post">
   name: <input type="text" name="name" value="<%= @contact.name %>">
   <input type="hidden" name="_method" value="put">
+  <button>edit contact</button>
+</form>
 
-<br>
-
+<form action="/tasks_contacts/<%= @contact.id %>" method="post">
 add task:
-  <select name="name">
+  <select name="task_id">
     <% @tasks.each do |task| %>
-      <option value="<%= task.name %>">
+      <option value="<%= task.id %>">
         <%= task.name %>
       </option>
     <% end %>
   </select><br>
-
-  <button>submit changes</button>
 </form>
 
 

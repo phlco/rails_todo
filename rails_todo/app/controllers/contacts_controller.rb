@@ -23,7 +23,7 @@ class ContactsController < ApplicationController
   def edit
     @contact = Contact.find(params[:id])
     @tasks = Task.all
-    @task = Task.find(params[:id])
+    # @task = Task.find(params[:id])
   end
 
   def update
@@ -36,7 +36,7 @@ class ContactsController < ApplicationController
   def destroy
     contact = Contact.find(params[:id])
     contact.destroy
-    contact.save
+    # contact.save
     redirect_to "/contacts"
   end
 

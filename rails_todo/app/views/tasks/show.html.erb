@@ -4,6 +4,11 @@
 
 <p>done: <%= @task.done %></p>
 
+<p>Individuals Assigned:
+    <% @task.contacts.each do |contact| %>
+      <%= contact.name %>
+    <% end %>
+</p>
 
 <form action="/tasks/<%= @task.id %>/edit" method="get">
 <button>edit task</button>

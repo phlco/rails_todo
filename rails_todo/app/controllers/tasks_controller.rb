@@ -4,17 +4,15 @@ class TasksController < ApplicationController
   end
 
   def new
+    @contacts = Contact.all
   end
 
   def create
-    name = params[:name]
-    info = params[:info]
-    done = params[:done]
-
     @task = Task.new
-    @task.name = name
-    @task.info = info
-    @task.done = done
+    @task.name = params[:name]
+    @task.info = params[:info]
+    @task.done = params[:done]
+    # @task.contacts << Contact.find(params[:contact])
     @task.save
 
     redirect_to '/tasks'
@@ -26,6 +24,7 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
+    @contacts = Contact.all
   end
 
   def update
@@ -33,14 +32,21 @@ class TasksController < ApplicationController
     @task.name = params[:name]
     @task.info = params[:info]
     @task.done = params[:done]
-    @task.save
-    redirect_to "/tasks/#{task.id}"
+    new_contact = Contact.find(params[:contact_id])
+    @task.contacts.each do |contact|
+       unless contact.id == new_contact.id
+           @task.contacts << new_contact
+           @task.save
+       end
+     end
+    # @task.save
+    redirect_to "/tasks"
   end
 
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    @task.save
+    # @task.save
     redirect_to "/tasks"
   end
 
