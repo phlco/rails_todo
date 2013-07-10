@@ -25,11 +25,16 @@ class ContactsController < ApplicationController
   end
 
   def update
-    @contact = Contact.find(params[:id])
-    @contact.name = params[:name]
-    @contact.title = params[:title]
-    @contact.save
+    contact = Contact.find(params[:id])
+    contact.name = params[:name]
+    contact.title = params[:title]
+    contact.save
     redirect_to "/contacts/#{@contact.id}"
   end
 
+  def destroy
+    contact = Contact.find(params[:id])
+    contact.destroy
+    redirect_to '/contacts'
+  end
 end
