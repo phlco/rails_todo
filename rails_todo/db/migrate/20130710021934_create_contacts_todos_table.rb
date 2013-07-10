@@ -1,8 +1,8 @@
 class CreateContactsTodosTable < ActiveRecord::Migration
   def up
     create_table :contacts_todos, :id => false do |t|
-      t.belongs_to :contacts
-      t.belongs_to :todos
+      t.belongs_to :contact
+      t.belongs_to :todo
     end
   end
 

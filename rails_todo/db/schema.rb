@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(:version => 20130710021934) do
   end
 
   create_table "contacts_todos", :id => false, :force => true do |t|
-    t.integer "contacts_id"
-    t.integer "todos_id"
+    t.integer "contact_id"
+    t.integer "todo_id"
   end
 
   create_table "todos", :force => true do |t|
