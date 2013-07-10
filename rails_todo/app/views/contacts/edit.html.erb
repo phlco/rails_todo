@@ -1,0 +1,8 @@
+<h1>Want to Edit a Contact?</h1>
+
+<form action="/todos/<%= @todo.id %>" method="post">
+  <input type='text' name="first_name" value="<%= @contact.first_name%>"placeholder="First Name">
+  <input type='text' name="last_name" <%= @contact.last_name%>placeholder="Last Name">
+  <input type="hidden" name="_method" value="put">
+  <button>Submit</button>
+</form>

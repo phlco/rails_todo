@@ -2,8 +2,8 @@
 <p>
   <ul>
     <li>
-      <% @contacts.each do |contact|%>
-       <a href="/contacts/<%= contact.id %>"> <%= contact.title %></a>
+      <%= @contacts.each do |contact|%>
+       <a href="/contacts/<%= contact.id %>"> <%= contact.first_name %> </a>
       <% end %>
     </li>
   </ul>

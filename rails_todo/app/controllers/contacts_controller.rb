@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
   def index
-    @contacts.all
+    @contacts = Contact.all
   end
 
   def create
