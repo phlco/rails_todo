@@ -12,6 +12,7 @@ class TodosController < ApplicationController
     todo = Todo.new
     todo.task = params[:task]
     todo.task_description = params[:task_description]
+    todo.contacts << Contact.find(params[:id])
     todo.save
     redirect_to '/todos'
   end
