@@ -1,1 +1,7 @@
 <h1>This is where my Contacts will be</h1>
+
+
+<% @contacts.each do |contact| %>
+  <%= contact.name %>
+  <%= contact.title %>
+<% end %>

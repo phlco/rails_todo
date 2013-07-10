@@ -2,7 +2,7 @@ class CreateContactsTable < ActiveRecord::Migration
   def up
     create_table :contacts do |t|
       t.string :name
-      t.string :phone
+      t.string :title
 
 
       t.timestamps
