@@ -31,12 +31,10 @@ def index
     todo.title = params[:title]
     todo.description = params[:description]
     new_contact = Contact.find(params[:contact_id])
-    todo.contacts.each do |contact|
-       unless contact.id == new_contact.id
-           todo.contacts << new_contact
-           todo.save
-       end
-     end
+    unless todo.contacts.include?(new_contact)
+          todo.contacts << new_contact
+          todo.save
+    end
     redirect_to('/todos')
   end
 
@@ -45,5 +43,4 @@ def index
     todo.destroy
     redirect_to('/todos')
   end
-
 end
