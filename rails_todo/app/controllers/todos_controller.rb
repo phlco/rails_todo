@@ -5,7 +5,7 @@ class TodosController < ApplicationController
   end
 
   def new
-
+    @contacts = Contact.all
   end
 
   def create

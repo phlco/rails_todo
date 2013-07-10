@@ -18,6 +18,7 @@ class ContactsController < ApplicationController
 
   def show
     @contact = Contact.find(params[:id])
+    @todo = Todo.find(params[:id])
   end
 
   def edit
