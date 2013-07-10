@@ -1,4 +1,4 @@
-<h1>Hey, <%= @contact.first_name%>. Here's what you've got to do.</h1>
+<h1>Hey, <%= @contact.first_name %>. Here's what you've got to do.</h1>
 
   <ul>
     <li>
@@ -7,6 +7,7 @@
     </li>
 
   </ul>
+
 <form action="/contacts/<%= @contact.id %>" method="post" >
   <input type="hidden" name="_method" value="delete">
   <button>delete</button>

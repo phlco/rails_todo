@@ -4,7 +4,7 @@ class ContactsController < ApplicationController
   end
 
   def create
-    contact = Contact.new
+    @contact = Contact.new
     contact.first_name = params[:first_name]
     contact.last_name = params[:last_name]
     contact.save
@@ -15,6 +15,9 @@ class ContactsController < ApplicationController
     @contact = contact.find(params[:id])
   end
 
+  def show
+    @contact = Contact.find(params[:id])
+  end
   def update
     contact = Contact.new
     contact.first_name = params[:first_name]
@@ -28,8 +31,4 @@ class ContactsController < ApplicationController
     contact.destroy
     redirect_to '/todos'
   end
-
-
-
-
 end
