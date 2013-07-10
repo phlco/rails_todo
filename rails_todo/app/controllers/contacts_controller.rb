@@ -9,7 +9,11 @@ class ContactsController < ApplicationController
   end
 
   def create
-
+    contact = Contact.new
+    contact.name = params[:name]
+    contact.title = params[:title]
+    contact.save
+    redirect_to '/contacts'
   end
 
 
