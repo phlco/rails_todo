@@ -1,9 +1,11 @@
 <div class="well">
   <h2>All Tasks</h2>
-
-  <% @tasks.each do |task| %>
-    <!-- Old way: <p><a href="/tasks/<%= task.id %>"><%= task.name %></a></p> -->
-    <p><%= link_to task.name, task_path(task) %></p>
-  <% end %>
+  <%= render @tasks %>
   <%= link_to "Add Task", new_task_path, class: 'btn btn-info' %>
+
+  <!-- Old way:<% @tasks.each do |task| %> -->
+    <!-- Old way: <p><a href="/tasks/<%= task.id %>"><%= task.name %></a></p> -->
+    <!-- Old way:<p><%= link_to task.name, task_path(task) %></p> -->
+  <!-- Old way:<% end %> -->
+
 </div>

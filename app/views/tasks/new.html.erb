@@ -4,7 +4,7 @@
   <p>Task: <input type="text" name="name"></p>
   <p>Details: <input type="text" name="details"></p>
 
-  <p>Responsible Person: <select name="contact">
+  <p>Responsible Person: <select class="span3" tabindex="1" name="contact">
     <%= @contacts.each do |contact| %>
       <option value="<%= contact.id %>"><%= contact.name %></option>
     <% end %>

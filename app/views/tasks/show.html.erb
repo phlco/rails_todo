@@ -1,11 +1,8 @@
 <div class="well">
-  <h2>Task <%= @task.id %></h2>
-
-  <p>Task: <%= @task.name %></p>
+  <dl class="palette palette-firm"><h2><%= @task.name %></h2></dl>
+  <br>
   <p>Details: <%= @task.details %></p>
-  <p>Responsible Person: <% @task.contacts.each do |contact| %>
-    <li><%= contact.name %></li>
-  <% end %></p>
+  <p>Responsible Person: <%= render partial: 'contacts/contact', collection: @task.contacts %></p>
   <p>Due Date: <%= @task.duedate %></p>
   <p>Status: <% if @task.status == false %><%= "In Progress" %><% else %><%= "Completed" %><% end %></p>
 

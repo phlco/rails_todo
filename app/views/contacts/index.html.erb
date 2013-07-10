@@ -1,7 +1,11 @@
 <div class="well">
-  <h2>All Contacts</h2>
+  <h2>Responsible Tasks For All Contacts</h2>
   <% @contacts.each do |contact| %>
-    <p><%= contact.name %></p>
+    <h5><%= contact.name %></h5>
+    <% contact.tasks.each do |task| %>
+      <li><%= link_to task.name, task_path(task) %></li>
+    <% end %>
+    <hr>
   <% end %>
   <%= link_to "Add Contact", new_contact_path, class: 'btn btn-info' %>
 </div>
