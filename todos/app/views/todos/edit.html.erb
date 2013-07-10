@@ -1,0 +1,16 @@
+<h1>Edit Your Task</h1>
+<form action="/todos/<%=@todo.id %>" method="post">
+  <input type="text" value="<%=@todo.title%>" name="title">
+  <input type="text" value="<%=@todo.description%>" name="description">
+  <input type="hidden" name="_method" value="put">
+
+<label>Add Person To Task</label>
+  <select name="contact_id">
+    <% @contacts.each do |contact| %>
+  <option value="<%= contact.id %>"><%= contact.name %></option>
+  <% end %>
+</select>
+
+  <button>Edit Todo</button>
+</form>
+<p><a href="/todos/<%=@todo.id %>">Back</a></p>

@@ -1,0 +1,8 @@
+<h1>Edit Your Contact</h1>
+<form action="/contacts/<%=@contact.id %>" method="post">
+  <input type="text" value="<%=@contact.name%>" name="name">
+  <input type="hidden" name="_method" value="put">
+  <button>Edit Contact</button>
+</form>
+
+<p><a href="/contacts/<%=@contact.id %>">Back</a></p>

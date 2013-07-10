@@ -1,0 +1,15 @@
+<h1><%= @contact.name %></h1>
+<h2>Tasks:</h2>
+<h3><%@contact.todos.each do |todo| %>
+          <ul>
+            <li><%= todo.title %></li>
+          </ul>
+          <% end %>
+</h3>
+<a href="/contacts/<%=@contact.id %>/edit">Edit Contact</a>
+<form action="/contacts/<%= @contact.id%>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button>Delete</button>
+</form>
+
+<p><a href="/contacts">Contacts</a></p>
