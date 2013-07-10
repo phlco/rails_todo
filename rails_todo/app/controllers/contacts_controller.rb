@@ -16,6 +16,10 @@ class ContactsController < ApplicationController
     redirect_to '/contacts'
   end
 
+  def show
+    @contact = Contact.find(params[:id])
+  end
+
 
 
 end
