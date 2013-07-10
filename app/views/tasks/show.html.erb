@@ -1,0 +1,15 @@
+<div class="well">
+  <dl class="palette palette-firm"><h2><%= @task.name %></h2></dl>
+  <br>
+  <p>Details: <%= @task.details %></p>
+  <p>Responsible Person: <%= render partial: 'contacts/contact', collection: @task.contacts %></p>
+  <p>Due Date: <%= @task.duedate %></p>
+  <p>Status: <% if @task.status == false %><%= "In Progress" %><% else %><%= "Completed" %><% end %></p>
+
+  <%= link_to "Edit", edit_task_path, class: 'btn btn-info' %>
+
+  <form action="/tasks/<%= @task.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button class="btn btn-info">Delete</button>
+  </form>
+</div>
