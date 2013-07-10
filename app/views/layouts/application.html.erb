@@ -7,8 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<a href="/">Home</a> | <a href="/tasks">All Tasks</a> | <a href="/tasks/new">Add Task</a>
-<%= yield %>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <a class="brand" href="/">Rails To-Do App</a>
+      <ul class="nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/tasks">Tasks</a></li>
+        <li><a href="/contacts">Contacts</a></li>
+      </ul>
+    </div>
+  </div>
 
+  <div class="row-fluid">
+    <div class="span8 offset2">
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>

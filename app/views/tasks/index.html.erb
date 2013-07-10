@@ -1,6 +1,8 @@
-<h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
+<div class="well">
+  <h2>All Tasks</h2>
 
-<% @tasks.each do |task| %>
-  <p><a href="/tasks/<%= task.id %>"><%= task.name %></a></p>
-<% end %>
+  <% @tasks.each do |task| %>
+    <p><a href="/tasks/<%= task.id %>"><%= task.name %></a></p>
+  <% end %>
+<a href="/tasks/new"><button class="btn btn-info">Add Task</button></a>
+</div>

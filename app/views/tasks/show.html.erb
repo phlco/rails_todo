@@ -1,15 +1,18 @@
-<h1>Tasks#show</h1>
-<p>Find me in app/views/tasks/show.html.erb</p>
+<div class="well">
+  <h2>Task <%= @task.id %></h2>
 
-<%= @task.name %>
-<%= @task.details %>
-<%= @task.person %>
-<%= @task.duedate %>
-<%= @task.status %>
+  <p>Task: <%= @task.name %></p>
+  <p>Details: <%= @task.details %></p>
+  <p>Responsible Person: <% @task.contacts.each do |contact| %>
+    <li><%= contact.name %></li>
+  <% end %></p>
+  <p>Due Date: <%= @task.duedate %></p>
+  <p>Status: <% if @task.status == false %><%= "In Progress" %><% else %><%= "Completed" %><% end %></p>
 
-<a href="/tasks/<%= @task.id %>/edit">Edit</a>
+  <a href="/tasks/<%= @task.id %>/edit"><button class="btn btn-info">Edit</button></a>
 
-<form action="/tasks/<%= @task.id %>" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <button>Delete</button>
-</form>
+  <form action="/tasks/<%= @task.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button class="btn btn-info">Delete</button>
+  </form>
+</div>

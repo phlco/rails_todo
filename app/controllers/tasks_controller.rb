@@ -4,16 +4,18 @@ class TasksController < ApplicationController
   end
 
   def new
+    @contacts = Contact.all
   end
 
   def create
     task = Task.new
     task.name = params[:name]
     task.details = params[:details]
-    task.person = params[:person]
-    task.duedate = params[:duedate].strftime("%Y-%d-%m")
+    task.duedate = params[:duedate] #.strftime("%Y-%d-%m")
     task.status = params[:status]
+    task.contacts << Contact.find(params[:contact])
     task.save
+
     redirect_to "/tasks/#{task.id}"
   end
 
@@ -23,15 +25,16 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
+    @contacts = Contact.all
   end
 
   def update
     task = Task.find(params[:id])
     task.name = params[:name]
     task.details = params[:details]
-    task.person = params[:person]
     task.duedate = params[:duedate]
     task.status = params[:status]
+    task.contacts << Contact.find(params[:contact])
     task.save
     redirect_to "/tasks/#{task.id}"
   end
