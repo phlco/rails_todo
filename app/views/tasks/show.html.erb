@@ -9,7 +9,7 @@
   <p>Due Date: <%= @task.duedate %></p>
   <p>Status: <% if @task.status == false %><%= "In Progress" %><% else %><%= "Completed" %><% end %></p>
 
-  <a href="/tasks/<%= @task.id %>/edit"><button class="btn btn-info">Edit</button></a>
+  <%= link_to "Edit", edit_task_path, class: 'btn btn-info' %>
 
   <form action="/tasks/<%= @task.id %>" method="post">
     <input type="hidden" name="_method" value="delete">

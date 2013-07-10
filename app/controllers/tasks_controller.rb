@@ -11,7 +11,7 @@ class TasksController < ApplicationController
     task = Task.new
     task.name = params[:name]
     task.details = params[:details]
-    task.duedate = params[:duedate] #.strftime("%Y-%d-%m")
+    task.duedate = params[:duedate] #.strftime("%Y-%d-%m") This is used for stripping down to date, but not needed here
     task.status = params[:status]
     task.contacts << Contact.find(params[:contact])
     task.save

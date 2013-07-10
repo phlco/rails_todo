@@ -3,5 +3,5 @@
   <% @contacts.each do |contact| %>
     <p><%= contact.name %></p>
   <% end %>
-  <a href="contacts/new"><button class="btn btn-info">Add Contact</button></a>
+  <%= link_to "Add Contact", new_contact_path, class: 'btn btn-info' %>
 </div>
