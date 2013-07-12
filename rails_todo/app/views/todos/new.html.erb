@@ -6,12 +6,12 @@
   <br><label for="task_description">Describe the Task</label>
   <input type="text" name="task_description" placeholder="task description"></br>
   <br><label for="contact_id">Assign a Contact</label>
-   <select = "contact">
+   <select = "contact_id">
       <% @contacts.each do |contact| %>
         <option value="<%= contact.id %>">
           <%= contact.name %>
-          <%end%>
         </option>
+      <%end%>
     </select></br>
   <button>Enter New Todo</button>
 </form>
