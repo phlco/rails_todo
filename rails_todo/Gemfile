@@ -23,7 +23,7 @@ end
 gem 'jquery-rails'
 
 
-gem 'pg' :group => :production
+gem 'pg' :group, => :production
 
 group :development, :test do
 
